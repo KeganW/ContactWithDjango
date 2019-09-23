@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Contact Kegan </title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="wrapperContact"> 
+	
+		<h2> Contact Form </h2>
+
+		<p> Thank you for taking the time to reach out to me. This page is designated for any questions, social planning or business related matters. Please provide some basic information so I can respond appropriately. I will try to answer as soon as possible. If the matter is urgent, please refer to the basic information that will be provided below. We will be in touch soon! </p>
+		
+		<form action="inform" method="post">
+
+			{% csrf_token %}
+
+		<div class="error">
+			
+			<h4> {{error}} </h4>
+
+		</div>
+
+		<div class="success">
+
+			<h4> {{success}} </h4>
+			
+		</div>
+
+			<h4> Name: <h4>
+			<input type="text"  name="name" placeholder="Enter your first and last name.">
+
+			<h4> Email: <h4>
+
+			<input type="text"  name="email" placeholder="Enter your email.">
+
+			<h4> Message: </h4> 
+
+		 	<textarea name="message" placeholder="Leave me a message."> </textarea>
+		
+			<h4> Relation: </h4>
+
+			<select name="occupation">
+
+			    <option value="none"> None </option>
+				<option value="family"> Family  </option>
+				<option value="friend"> Friend  </option>
+				<option value="professor"> Professor </option>
+				<option value="student"> Student </option>
+				<option value="worker"> Worker </option>
+
+			</select>
+
+			<button type="submit" name="submit"> Submit Form </button>
+
+
+	</div>
+
+			<footer class="basicInfo">
+
+				<p> Feel free to add me on social media and message me from there. </p>
+
+				
+				<p> Email: kmw224671@gmail.com </p>
+				
+			</footer>
+
+		</form>
+</body>
+</html>
